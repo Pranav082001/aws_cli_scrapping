@@ -1,0 +1,450 @@
+,Command Name,Aim,Description,code
+0,accept-reserved-instances-exchange-quote,to perform a convertible reserved instance exchange,this example performs an exchange of the specified convertible reserved instances.,aws ec2 accept-reserved-instances-exchange-quote --reserved-instance-ids 7b8750c3-397e-4da4-bbcb-a45ebexample --target-configurations OfferingId=b747b472-423c-48f3-8cee-679bcexample
+1,accept-transit-gateway-peering-attachment,to accept a transit gateway peering attachment,the following accept-transit-gateway-peering-attachment example accepts the specified transit gateway peering attachment. the --region parameter specifies the region that the accepter transit gateway is located in.,"aws ec2 accept-transit-gateway-peering-attachment 
+    --transit-gateway-attachment-id tgw-attach-4455667788aabbccd 
+    --region us-east-2"
+2,accept-transit-gateway-vpc-attachment,to accept a request to attach a vpc to a transit gateway.,the following accept-transit-gateway-vpc-attachment example accepts the request forte specified attachment.,"aws ec2 accept-transit-gateway-vpc-attachment 
+    --transit-gateway-attachment-id tgw-attach-0a34fe6b4fEXAMPLE"
+3,accept-vpc-endpoint-connections,to accept an interface endpoint connection request,this example accepts the specified endpoint connection request for the specified endpoint service.,aws ec2 accept-vpc-endpoint-connections --service-id vpce-svc-03d5ebb7d9579a2b3 --vpc-endpoint-ids vpce-0c1308d7312217abc
+4,accept-vpc-peering-connection,to accept a vpc peering connection,this example accepts the specified vpc peering connection request.,aws ec2 accept-vpc-peering-connection --vpc-peering-connection-id pcx-1a2b3c4d
+5,advertise-byoip-cidr,to advertise an address range,the following advertise-byoip-cidr example advertises the specified public ipv4 address range.,"aws ec2 advertise-byoip-cidr 
+    --cidr 203.0.113.25/24"
+6,allocate-address, to allocate an elastic ip address from amazon's address pool,the following allocate-address example allocates an elastic ip address. amazon ec2 selects the address from amazon's address pool.,aws ec2 allocate-address
+7,allocate-hosts, to allocate a dedicated host,"the following allocate-hosts example allocates a single dedicated host in the eu-west-1a availability zone, onto which you can launch m5.large instances. by default, the dedicated host accepts only target instance launches, and does not support host recovery.","aws ec2 allocate-hosts 
+    --instance-type m5.large 
+    --availability-zone eu-west-1a 
+    --quantity 1"
+8,allocate-ipam-pool-cidr,to allocate a cidr from an ipam pool,the following allocate-ipam-pool-cidr example allocates a cidr from an ipam pool.,"aws ec2 allocate-ipam-pool-cidr 
+    --ipam-pool-id ipam-pool-0533048da7d823723 
+    --netmask-length 24"
+9,apply-security-groups-to-client-vpn-target-network,to apply security groups to a target network for a client vpn endpoint,the following apply-security-groups-to-client-vpn-target-network example applies security group sg-01f6e627a89f4db32 to the association between the specified target network and client vpn endpoint.,"aws ec2 apply-security-groups-to-client-vpn-target-network 
+    --security-group-ids sg-01f6e627a89f4db32 
+    --vpc-id vpc-0e2110c2f324332e0 
+    --client-vpn-endpoint-id cvpn-endpoint-123456789123abcde"
+10,assign-ipv6-addresses,to assign specific ipv6 addresses to a network interface,this example assigns the specified ipv6 addresses to the specified network interface.,aws ec2 assign-ipv6-addresses --network-interface-id eni-38664473 --ipv6-addresses 2001:db8:1234:1a00:3304:8879:34cf:4071 2001:db8:1234:1a00:9691:9503:25ad:1761
+11,assign-private-ip-addresses,to assign a specific secondary private ip address a network interface,"this example assigns the specified secondary private ip address to the specified network interface. if the command succeeds, no output is returned.",aws ec2 assign-private-ip-addresses --network-interface-id eni-e5aa89a3 --private-ip-addresses 10.0.0.82
+12,associate-address,to associate an elastic ip addresses in ec2-classic,"this example associates an elastic ip address with an instance in ec2-classic. if the command succeeds, no output is returned.",aws ec2 associate-address --instance-id i-07ffe74c7330ebf53 --public-ip 198.51.100.0
+13,associate-client-vpn-target-network,to associate a target network with a client vpn endpoint,the following associate-client-vpn-target-network example associates a subnet with the specified client vpn endpoint.,"aws ec2 associate-client-vpn-target-network 
+    --subnet-id subnet-0123456789abcabca 
+    --client-vpn-endpoint-id cvpn-endpoint-123456789123abcde"
+14,associate-dhcp-options,to associate a dhcp options set with your vpc,"this example associates the specified dhcp options set with the specified vpc. if the command succeeds, no output is returned.",aws ec2 associate-dhcp-options --dhcp-options-id dopt-d9070ebb --vpc-id vpc-a01106c2
+15,associate-iam-instance-profile,to associate an iam instance profile with an instance,this example associates an iam instance profile named admin-role with instance i-123456789abcde123.,aws ec2 associate-iam-instance-profile --instance-id i-123456789abcde123 --iam-instance-profile Name=admin-role
+16,associate-instance-event-window, to associate one or more instances with an event window,the following associate-instance-event-window example associates one or more instances with an event window.,"aws ec2 associate-instance-event-window 
+    --region us-east-1 
+    --instance-event-window-id iew-0abcdef1234567890 
+    --association-target ""InstanceIds=i-1234567890abcdef0,i-0598c7d356eba48d7"""
+17,associate-route-table,to associate a route table with a subnet,this example associates the specified route table with the specified subnet.,aws ec2 associate-route-table --route-table-id rtb-22574640 --subnet-id subnet-9d4a7b6c
+18,associate-subnet-cidr-block,to associate an ipv6 cidr block with a subnet,this example associates an ipv6 cidr block with the specified subnet.,aws ec2 associate-subnet-cidr-block --subnet-id subnet-5f46ec3b --ipv6-cidr-block 2001:db8:1234:1a00::/64
+19,associate-transit-gateway-multicast-domain,to associate a transit gateway with a multicast domain,the following associate-transit-gateway-multicast-domain example associates the specified subnet and attachment with the specified multicast domain.,"aws ec2 associate-transit-gateway-multicast-domain 
+    --transit-gateway-multicast-domain-id tgw-mcast-domain-0c4905cef79d6e597 
+    --transit-gateway-attachment-id tgw-attach-028c1dd0f8f5cbe8e 
+    --subnet-ids subnet-000de86e3b49c932a 
+    --transit-gateway-multicast-domain-id tgw-mcast-domain-0c4905cef7EXAMPLE"
+20,associate-transit-gateway-route-table,to associate a  transit gateway route table with a transit gateway attachment,the following example associates the specified transit gateway route table with the specified vpc attachment.,"aws ec2 associate-transit-gateway-route-table 
+    --transit-gateway-route-table-id tgw-rtb-002573ed1eEXAMPLE 
+    --transit-gateway-attachment-id tgw-attach-0b5968d3b6EXAMPLE"
+21,associate-vpc-cidr-block, to associate an amazon-provided ipv6 cidr block with a vpc,the following associate-vpc-cidr-block example associates an ipv6 cidr block with the specified vpc.:,"aws ec2 associate-vpc-cidr-block 
+    --amazon-provided-ipv6-cidr-block 
+    --ipv6-cidr-block-network-border-group us-west-2-lax-1  
+    --vpc-id vpc-8EXAMPLE"
+22,attach-classic-link-vpc,to link (attach) an ec2-classic instance to a vpc,this example links instance i-1234567890abcdef0 to vpc vpc-88888888 through the vpc security group sg-12312312.,aws ec2 attach-classic-link-vpc --instance-id  i-1234567890abcdef0 --vpc-id vpc-88888888 --groups sg-12312312
+23,attach-internet-gateway,to attach an internet gateway to your vpc,the following attach-internet-gateway example attaches the specified internet gateway to the specific vpc.,"aws ec2 attach-internet-gateway 
+    --internet-gateway-id igw-0d0fb496b3EXAMPLE 
+    --vpc-id vpc-0a60eb65b4EXAMPLE"
+24,attach-network-interface, to attach a network interface to an instance,the following attach-network-interface example attaches the specified network interface to the specified instance.,"aws ec2 attach-network-interface 
+    --network-interface-id eni-0dc56a8d4640ad10a 
+    --instance-id i-1234567890abcdef0 
+    --device-index 1"
+25,attach-volume,to attach a volume to an instance,this example command attaches a volume (vol-1234567890abcdef0) to an instance (i-01474ef662b89480) as /dev/sdf.,aws ec2 attach-volume --volume-id vol-1234567890abcdef0 --instance-id i-01474ef662b89480 --device /dev/sdf
+26,attach-vpn-gateway,to attach a virtual private gateway to your vpc,the following attach-vpn-gateway example attaches the specified virtual private gateway to the specified vpc.,"aws ec2 attach-vpn-gateway 
+    --vpn-gateway-id vgw-9a4cacf3 
+    --vpc-id vpc-a01106c2"
+27,authorize-client-vpn-ingress,to add an authorization rule for a client vpn endpoint,the following authorize-client-vpn-ingress example adds an ingress authorization rule that permits all clients to access the internet (0.0.0.0/0).,"aws ec2 authorize-client-vpn-ingress 
+    --client-vpn-endpoint-id cvpn-endpoint-123456789123abcde 
+    --target-network-cidr 0.0.0.0/0 
+    --authorize-all-groups"
+28,authorize-security-group-egress,to add a rule that allows outbound traffic to a specific address range,this example command adds a rule that grants access to the specified address ranges on tcp port 80.,"aws ec2 authorize-security-group-egress --group-id sg-1a2b3c4d --ip-permissions IpProtocol=tcp,FromPort=80,ToPort=80,IpRanges='[{CidrIp=10.0.0.0/16}]'"
+29,authorize-security-group-ingress, [ec2-classic] to add a rule that allows inbound ssh traffic,"the following example enables inbound traffic on tcp port 22 (ssh). if the command succeeds, no output is returned.","aws ec2 authorize-security-group-ingress 
+    --group-name MySecurityGroup 
+    --protocol tcp 
+    --port 22 
+    --cidr 203.0.113.0/24"
+30,bundle-instance,to bundle an instance,"this example bundles instance i-1234567890abcdef0 to a bucket called bundletasks. before you specify values for your access key ids, review and follow the guidance in best practices for managing aws access keys.",aws ec2 bundle-instance --instance-id i-1234567890abcdef0 --bucket bundletasks --prefix winami --owner-akid AK12AJEXAMPLE --owner-sak example123example
+31,cancel-bundle-task,to cancel a bundle task,this example cancels bundle task bun-2a4e041c.,aws ec2 cancel-bundle-task --bundle-id bun-2a4e041c
+32,cancel-capacity-reservation,to cancel a capacity reservation,the following cancel-capacity-reservation example cancels the specified capacity reservation.,"aws ec2 cancel-capacity-reservation 
+    --capacity-reservation-id cr-1234abcd56EXAMPLE"
+33,cancel-capacity-reservation-fleets,to cancel a capacity reservation fleet,"the following cancel-capacity-reservation-fleets example cancels the specified capacity reservation fleet and the capacity it reserves. when you cancel a fleet, its status changes to cancelled, and it can no longer create new capacity reservations. additionally, all of the individual capacity reservations in the fleet are cancelled, and the instances that were previously running in the reserved capacity continue to run normally in shared capacity.","aws ec2 cancel-capacity-reservation-fleets 
+    --capacity-reservation-fleet-ids crf-abcdef01234567890"
+34,cancel-conversion-task,to cancel an active conversion of an instance or a volume,"this example cancels the upload associated with the task id import-i-fh95npoc. if the command succeeds, no output is returned.",aws ec2 cancel-conversion-task --conversion-task-id import-i-fh95npoc
+35,cancel-export-task,to cancel an active export task,"this example cancels an active export task with the task id export-i-fgelt0i7. if the command succeeds, no output is returned.",aws ec2 cancel-export-task --export-task-id export-i-fgelt0i7
+36,cancel-import-task,to cancel an import task,the following cancel-import-task example cancels the specified import image task.,"aws ec2 cancel-import-task 
+    --import-task-id import-ami-1234567890abcdef0"
+37,cancel-reserved-instances-listing,to cancel a reserved instance listing,the following cancel-reserved-instances-listing example cancels the specified reserved instance listing.,"aws ec2 cancel-reserved-instances-listing 
+    --reserved-instances-listing-id 5ec28771-05ff-4b9b-aa31-9e57dexample"
+38,cancel-spot-fleet-requests,to cancel spot fleet requests,this example command cancels a spot fleet request and terminates the associated spot instances.,aws ec2 cancel-spot-fleet-requests --spot-fleet-request-ids sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE --terminate-instances
+39,cancel-spot-instance-requests,to cancel spot instance requests,this example command cancels a spot instance request.,aws ec2 cancel-spot-instance-requests --spot-instance-request-ids sir-08b93456
+40,confirm-product-instance,to confirm the product instance,this example determines whether the specified product code is associated with the specified instance.,aws ec2 confirm-product-instance --product-code 774F4FF8 --instance-id i-1234567890abcdef0
+41,copy-fpga-image,to copy an amazon fpga image,this example copies the specified afi from the us-east-1 region to the current region (eu-west-1).,aws ec2 copy-fpga-image --name copy-afi --source-fpga-image-id afi-0d123e123bfc85abc --source-region us-east-1 --region eu-west-1
+42,copy-image, to copy an ami to another region,the following copy-image example command copies the specified ami from the us-west-2 region to the us-east-1 region and adds a short description.,"aws ec2 copy-image 
+    --region us-east-1 
+    --name ami-name 
+    --source-region us-west-2 
+    --source-image-id ami-066877671789bd71b 
+    --description ""This is my copied image."""
+43,copy-snapshot, to copy a snapshot to another region,the following copy-snapshot example command copies the specified snapshot from the us-west-2 region to the us-east-1 region and adds a short description.,"aws ec2 copy-snapshot 
+    --region us-east-1 
+    --source-region us-west-2 
+    --source-snapshot-id snap-066877671789bd71b 
+    --description ""This is my copied snapshot."""
+44,create-capacity-reservation, to create a capacity reservation,"the following create-capacity-reservation example creates a capacity reservation in the eu-west-1a availability zone, into which you can launch three t2.medium instances running a linux/unix operating system. by default, the capacity reservation is created with open instance matching criteria and no support for ephemeral storage, and it remains active until you manually cancel it.","aws ec2 create-capacity-reservation 
+    --availability-zone eu-west-1a 
+    --instance-type t2.medium 
+    --instance-platform Linux/UNIX 
+    --instance-count 3"
+45,create-capacity-reservation-fleet,to create a capacity reservation fleet,"the following create-capacity-reservation-fleet example creates a capacity reservation fleet for the instance type specified in the request, up to the specified total target capacity. the number of instances for which the capacity reservation fleet reserves capacity depends on the total target capacity and instance type weights that you specify in the request. specify the instance types to use and a priority for each of the designated instance types.","aws ec2 create-capacity-reservation-fleet 
+--total-target-capacity 24 
+--allocation-strategy prioritized 
+--instance-match-criteria open 
+--tenancy default 
+--end-date 2022-12-31T23:59:59.000Z 
+--instance-type-specifications file://instanceTypeSpecification.json"
+46,create-client-vpn-endpoint,to create a client vpn endpoint,the following create-client-vpn-endpoint example creates a client vpn endpoint that uses mutual authentication and specifies a value for the client cidr block.,"aws ec2 create-client-vpn-endpoint 
+    --client-cidr-block ""172.31.0.0/16"" 
+    --server-certificate-arn arn:aws:acm:ap-south-1:123456789012:certificate/a1b2c3d4-5678-90ab-cdef-11111EXAMPLE 
+    --authentication-options Type=certificate-authentication,MutualAuthentication={ClientRootCertificateChainArn=arn:aws:acm:ap-south-1:123456789012:certificate/a1b2c3d4-5678-90ab-cdef-22222EXAMPLE} 
+    --connection-log-options Enabled=false"
+47,create-client-vpn-route,to create a route for a client vpn endpoint,the following create-client-vpn-route example adds a route to the internet (0.0.0.0/0) for the specified subnet of the client vpn endpoint.,"aws ec2 create-client-vpn-route 
+    --client-vpn-endpoint-id cvpn-endpoint-123456789123abcde 
+    --destination-cidr-block 0.0.0.0/0  
+    --target-vpc-subnet-id subnet-0123456789abcabca"
+48,create-customer-gateway,to create a customer gateway,this example creates a customer gateway with the specified ip address for its outside interface.,aws ec2 create-customer-gateway --type ipsec.1 --public-ip 12.1.2.3 --bgp-asn 65534
+49,create-default-subnet,to create a default subnet,this example creates a default subnet in availability zone us-east-2a.," aws ec2 create-default-subnet --availability-zone us-east-2a{
+   ""Subnet"": {
+       ""AvailabilityZone"": ""us-east-2a"",
+       ""Tags"": [],
+       ""AvailableIpAddressCount"": 4091,
+       ""DefaultForAz"": true,
+       ""Ipv6CidrBlockAssociationSet"": [],
+       ""VpcId"": ""vpc-1a2b3c4d"",
+       ""State"": ""available"",
+       ""MapPublicIpOnLaunch"": true,
+       ""SubnetId"": ""subnet-1122aabb"",
+       ""CidrBlock"": ""172.31.32.0/20"",
+       ""AssignIpv6AddressOnCreation"": false
+   }
+ }"
+50,create-default-vpc,to create a default vpc,this example creates a default vpc.,aws ec2 create-default-vpc
+51,create-dhcp-options,to create a set of dhcp options,"the following create-dhcp-options example creates a set of dhcp options that specifies the domain name, the domain name servers, and the netbios node type.","aws ec2 create-dhcp-options 
+    --dhcp-configuration 
+        ""Key=domain-name-servers,Values=10.2.5.1,10.2.5.2"" 
+        ""Key=domain-name,Values=example.com"" 
+        ""Key=netbios-node-type,Values=2"""
+52,create-egress-only-internet-gateway,to create an egress-only internet gateway,this example creates an egress-only internet gateway for the specified vpc.,aws ec2 create-egress-only-internet-gateway --vpc-id vpc-0c62a468
+53,create-fleet, to create an ec2 fleet that launches spot instances as the default purchasing model,"the following create-fleet example creates an ec2 fleet using the minimum parameters required to launch a fleet: a launch template, target capacity, and default purchasing model. the launch template is identified by its launch template id and version number. the target capacity for the fleet is 2 instances, and the default purchasing model is spot, which results in the fleet launching 2 spot instances.","aws ec2 create-fleet 
+    --cli-input-json file://file_name.json"
+54,create-flow-logs, to create a flow log,the following create-flow-logs example creates a flow log that captures all rejected traffic for the specified network interface. the flow logs are delivered to a log group in cloudwatch logs using the permissions in the specified iam role.,"aws ec2 create-flow-logs 
+    --resource-type NetworkInterface 
+    --resource-ids eni-11223344556677889 
+    --traffic-type REJECT 
+    --log-group-name my-flow-logs 
+    --deliver-logs-permission-arn arn:aws:iam::123456789101:role/publishFlowLogs"
+55,create-fpga-image,to create an amazon fpga image,this example creates an afi from the specified tarball in the specified bucket.,"aws ec2 create-fpga-image --name my-afi --description test-afi --input-storage-location Bucket=my-fpga-bucket,Key=dcp/17_12_22-103226.Developer_CL.tar --logs-storage-location Bucket=my-fpga-bucket,Key=logs"
+56,create-image, to create an ami from an amazon ebs-backed instance,the following create-image example creates an ami from the specified instance.,"aws ec2 create-image 
+    --instance-id i-1234567890abcdef0 
+    --name ""My server"" 
+    --description ""An AMI for my server"""
+57,create-instance-event-window, to create an event window with a time range,the following create-instance-event-window example creates an event window with a time range. you can't also specify the cron-expression parameter.,"aws ec2 create-instance-event-window 
+    --region us-east-1 
+    --time-range StartWeekDay=monday,StartHour=2,EndWeekDay=wednesday,EndHour=8 
+    --tag-specifications ""ResourceType=instance-event-window,Tags=[{Key=K1,Value=V1}]"" 
+    --name myEventWindowName"
+58,create-instance-export-task,to export an instance,"this example command creates a task to export the instance i-1234567890abcdef0 to the amazon s3 bucket
+myexportbucket.","aws ec2 create-instance-export-task --description ""RHEL5 instance"" --instance-id i-1234567890abcdef0 --target-environment vmware --export-to-s3-task DiskImageFormat=vmdk,ContainerFormat=ova,S3Bucket=myexportbucket,S3Prefix=RHEL5"
+59,create-internet-gateway,to create an internet gateway,the following create-internet-gateway example creates an internet gateway with the tag name=my-igw.,"aws ec2 create-internet-gateway 
+    --tag-specifications ResourceType=internet-gateway,Tags=[{Key=Name,Value=my-igw}]"
+60,create-ipam,to create an ipam,the following create-ipam example creates an ipam.,"aws ec2 create-ipam 
+    --description ""Example description"" 
+    --operating-regions ""RegionName=us-east-2"" ""RegionName=us-west-1"" 
+    --tag-specifications 'ResourceType=ipam,Tags=[{Key=Name,Value=ExampleIPAM}]'"
+61,create-ipam-pool,to create an ipam pool,the following create-ipam-pool example creates an ipam pool.,"aws ec2 create-ipam-pool 
+    --ipam-scope-id ipam-scope-02fc38cd4c48e7d38 
+    --address-family ipv4 
+    --auto-import 
+    --allocation-min-netmask-length 16 
+    --allocation-max-netmask-length 26 
+    --allocation-default-netmask-length 24 
+    --allocation-resource-tags ""Key=Environment,Value=Preprod"" 
+    --tag-specifications 'ResourceType=ipam-pool,Tags=[{Key=Name,Value=""Preprod pool""}]'"
+62,create-ipam-scope,to create an ipam scope,the following create-ipam-scope example creates an ipam scope.,"aws ec2 create-ipam-scope 
+    --ipam-id ipam-08440e7a3acde3908 
+    --description ""Example description"" 
+    --tag-specifications 'ResourceType=ipam-scope,Tags=[{Key=Name,Value=""Example name value""}]'"
+63,create-key-pair,to create a key pair,this example creates a key pair named mykeypair.,aws ec2 create-key-pair --key-name MyKeyPair
+64,create-launch-template, to create a launch template,"the following create-launch-template example creates a launch template that specifies the subnet in which to launch the instance , assigns a public ip address and an ipv6 address to the instance, and creates a tag for the instance.","aws ec2 create-launch-template 
+    --launch-template-name TemplateForWebServer 
+    --version-description WebVersion1 
+    --launch-template-data '{""NetworkInterfaces"":[{""AssociatePublicIpAddress"":true,""DeviceIndex"":0,""Ipv6AddressCount"":1,""SubnetId"":""subnet-7b16de0c""}],""ImageId"":""ami-8c1be5f6"",""InstanceType"":""t2.small"",""TagSpecifications"":[{""ResourceType"":""instance"",""Tags"":[{""Key"":""purpose"",""Value"":""webserver""}]}]}'"
+65,create-launch-template-version,to create a launch template version,this example creates a new launch template version based on version 1 of the launch template and specifies a different ami id.,"aws ec2 create-launch-template-version --launch-template-id lt-0abcd290751193123 --version-description WebVersion2 --source-version 1 --launch-template-data '{""ImageId"":""ami-c998b6b2""}'"
+66,create-local-gateway-route,to create a static route for a local gateway route table,the following create-local-gateway-route example creates the specified route in the specified local gateway route table.,"aws ec2 create-local-gateway-route 
+    --destination-cidr-block 0.0.0.0/0 
+    --local-gateway-route-table-id lgw-rtb-059615ef7dEXAMPLE"
+67,create-local-gateway-route-table-vpc-association,to associate a vpc with a route table,the following create-local-gateway-route-table-vpc-association example associates the specified vpc with the specified local gateway route table.,"aws ec2 create-local-gateway-route-table-vpc-association 
+    --local-gateway-route-table-id lgw-rtb-059615ef7dEXAMPLE 
+    --vpc-id vpc-07ef66ac71EXAMPLE"
+68,create-managed-prefix-list,to create a prefix list,"the following create-managed-prefix-list example creates an ipv4 prefix list with a maximum of 10 entries, and creates 2 entries in the prefix list.","aws ec2 create-managed-prefix-list 
+    --address-family IPv4 
+    --max-entries 10 
+    --entries Cidr=10.0.0.0/16,Description=vpc-a Cidr=10.2.0.0/16,Description=vpc-b 
+    --prefix-list-name vpc-cidrs"
+69,create-nat-gateway, to create a public nat gateway,"the following create-nat-gateway example creates a public nat gateway in the specified subnet and associates the elastic ip address with the specified allocation id. when you create a public nat gateway, you must associate an elastic ip address.","aws ec2 create-nat-gateway 
+    --subnet-id subnet-0250c25a1fEXAMPLE 
+    --allocation-id eipalloc-09ad461b0dEXAMPLE"
+70,create-network-acl,to create a network acl,this example creates a network acl for the specified vpc.,aws ec2 create-network-acl --vpc-id vpc-a01106c2
+71,create-network-acl-entry,to create a network acl entry,"this example creates an entry for the specified network acl. the rule allows ingress traffic from any ipv4 address (0.0.0.0/0) on udp port 53 (dns) into any associated subnet. if the command succeeds, no output is returned.","aws ec2 create-network-acl-entry --network-acl-id acl-5fb85d36 --ingress --rule-number 100 --protocol udp --port-range From=53,To=53 --cidr-block 0.0.0.0/0 --rule-action allow"
+72,create-network-insights-access-scope,to create network insights access scopes,the following create-network-insights-access-scope example creates an access scope in your aws account.,"aws ec2 create-network-insights-access-scope 
+    --cli-input-json file://access-scope-file.json"
+73,create-network-insights-path,to create a path,"the following create-network-insights-path example creates a path. the source is the specified internet gateway and the destination is the specified ec2 instance. to determine whether the destination is reachable using the specified protocol and port, analyze the path using the start-network-insights-analysis command.","aws ec2 create-network-insights-path 
+    --source igw-0797cccdc9d73b0e5 
+    --destination i-0495d385ad28331c7 
+    --destination-port 22 
+    --protocol TCP"
+74,create-network-interface,to create a network interface,this example creates a network interface for the specified subnet.,"aws ec2 create-network-interface --subnet-id subnet-9d4a7b6c --description ""my network interface"" --groups sg-903004f8 --private-ip-address 10.0.2.17"
+75,create-network-interface-permission,to create a network interface permission,this example grants permission to account 123456789012 to attach network interface eni-1a2b3c4d to an instance.,aws ec2 create-network-interface-permission --network-interface-id eni-1a2b3c4d --aws-account-id 123456789012 --permission INSTANCE-ATTACH
+76,create-placement-group,to create a placement group,this example command creates a placement group with the specified name.,aws ec2 create-placement-group --group-name my-cluster --strategy cluster
+77,create-replace-root-volume-task, to restore a root volume to its initial launch state,the following create-replace-root-volume-task example restores the root volume of instance i-0123456789abcdefa to its initial launch state.,"aws ec2 create-replace-root-volume-task 
+    --instance-id i-0123456789abcdefa"
+78,create-reserved-instances-listing,to list a reserved instance in the reserved instance marketplace,the following create-reserved-instances-listing example creates a listing for the specified reserved instance in the reserved instance marketplace.,"aws ec2 create-reserved-instances-listing 
+    --reserved-instances-id 5ec28771-05ff-4b9b-aa31-9e57dexample 
+    --instance-count 3 
+    --price-schedules CurrencyCode=USD,Price=25.50 
+    --client-token 550e8400-e29b-41d4-a716-446655440000"
+79,create-restore-image-task,to restore an ami from an s3 bucket,"the following create-restore-image-task example restores an ami from an s3 bucket. use the values for s3objectkey `` and ``bucket from the describe-store-image-tasks output, specify the object key of the ami and the name of the s3 bucket to which the ami was copied, and specify the name for the restored ami. the name must be unique for amis in the region for this account. the restored ami will receive a new ami id.","aws ec2 create-restore-image-task 
+    --object-key ami-1234567890abcdef0.bin 
+    --bucket my-ami-bucket 
+    --name ""New AMI Name"""
+80,create-route,to create a route,"this example creates a route for the specified route table. the route matches all ipv4 traffic (0.0.0.0/0) and routes it to the specified internet gateway. if the command succeeds, no output is returned.",aws ec2 create-route --route-table-id rtb-22574640 --destination-cidr-block 0.0.0.0/0 --gateway-id igw-c0a643a9
+81,create-route-table,to create a route table,this example creates a route table for the specified vpc.,aws ec2 create-route-table --vpc-id vpc-a01106c2
+82,create-security-group,to create a security group for ec2-classic,this example creates a security group named mysecuritygroup.,"aws ec2 create-security-group --group-name MySecurityGroup --description ""My security group"""
+83,create-snapshot,to create a snapshot,this example command creates a snapshot of the volume with a volume id of vol-1234567890abcdef0 and a short description to identify the snapshot.,"aws ec2 create-snapshot --volume-id vol-1234567890abcdef0 --description ""This is my root volume snapshot"""
+84,create-snapshots, to create a multi-volume snapshot,the following create-snapshots example creates snapshots of all volumes attached to the specified instance.,"aws ec2 create-snapshots 
+    --instance-specification InstanceId=i-1234567890abcdef0 
+    --description ""This is snapshot of a volume from my-instance"""
+85,create-spot-datafeed-subscription,to create a spot instance data feed,the following create-spot-datafeed-subscription example creates a spot instance data feed.,"aws ec2 create-spot-datafeed-subscription 
+    --bucket my-bucket 
+    --prefix spot-data-feed"
+86,create-store-image-task,to store an ami in an s3 bucket,the following create-store-image-task example stores an ami in an s3 bucket. specify the id of the ami and the name of the s3 bucket in which to store the ami.,"aws ec2 create-store-image-task 
+  --image-id ami-1234567890abcdef0 
+  --bucket my-ami-bucket"
+87,create-subnet, to create a subnet with an ipv4 cidr block only,the following create-subnet example creates a subnet in the specified vpc with the specified ipv4 cidr block.,"aws ec2 create-subnet 
+    --vpc-id vpc-081ec835f3EXAMPLE 
+    --cidr-block 10.0.0.0/24 
+    --tag-specifications ResourceType=subnet,Tags=[{Key=Name,Value=my-ipv4-only-subnet}]"
+88,create-subnet-cidr-reservation,to create a subnet cidr reservation,the following create-subnet-cidr-reservation example creates a subnet cidr reservation for the specified subnet and cidr range.,"aws ec2 create-subnet-cidr-reservation 
+    --subnet-id subnet-03c51e2eEXAMPLE 
+    --reservation-type prefix 
+    --cidr 10.1.0.20/26"
+89,create-tags,to add a tag to a resource,"the following create-tags example adds the tag stack=production to the specified image, or overwrites an existing tag for the ami where the tag key is stack.","aws ec2 create-tags 
+    --resources ami-1234567890abcdef0 --tags Key=Stack,Value=production"
+90,create-traffic-mirror-filter,to create a traffic mirror filter,"the following create-traffic-mirror-filter example creates a traffic mirror filter. after you create the filter, use create-traffic-mirror-filter-rule to add rules to the filter.","aws ec2 create-traffic-mirror-filter 
+    --description ""TCP Filter"""
+91,create-traffic-mirror-filter-rule,to create a filter rule for incoming tcp traffic,"the following create-traffic-mirror-filter-rule example creates a rule that you can use to mirror all incoming tcp traffic. before you run this command, use create-traffic-mirror-filter to create the the traffic mirror filter.","aws ec2 create-traffic-mirror-filter-rule 
+    --description ""TCP Rule"" 
+    --destination-cidr-block 0.0.0.0/0  
+    --protocol 6 
+    --rule-action accept 
+    --rule-number 1 
+    --source-cidr-block 0.0.0.0/0 
+    --traffic-direction ingress 
+    --traffic-mirror-filter-id tmf-04812ff784b25ae67"
+92,create-traffic-mirror-session,to create a traffic mirror session,the following create-traffic-mirror-session command creates a traffic mirror sessions for the specified source and target for 25 bytes of the packet.,"aws ec2 create-traffic-mirror-session 
+    --description ""example session"" 
+    --traffic-mirror-target-id tmt-07f75d8feeEXAMPLE 
+    --network-interface-id eni-070203f901EXAMPLE 
+    --session-number 1  
+    --packet-length 25 
+    --traffic-mirror-filter-id tmf-04812ff784EXAMPLE"
+93,create-traffic-mirror-target,to create a a network load balancer traffic mirror target,the following create-traffic-mirror-target example creates a  network load balancer traffic mirror target.,"aws ec2 create-traffic-mirror-target 
+    --description ""Example Network Load Balancer Target"" 
+    --network-load-balancer-arn arn:aws:elasticloadbalancing:us-east-1:111122223333:loadbalancer/net/NLB/7cdec873EXAMPLE"
+94,create-transit-gateway,to create a transit gateway,the following create-transit-gateway example creates a transit gateway.,"aws ec2 create-transit-gateway 
+    --description MyTGW 
+    --options AmazonSideAsn=64516,AutoAcceptSharedAttachments=enable,DefaultRouteTableAssociation=enable,DefaultRouteTablePropagation=enable,VpnEcmpSupport=enable,DnsSupport=enable"
+95,create-transit-gateway-connect,to create a transit gateway connect attachment,"the following create-transit-gateway-connect example creates a connect attachment, with the ""gre"" protocol, for the specified attachment.","aws ec2 create-transit-gateway-connect 
+    --transport-transit-gateway-attachment-id tgw-attach-0a89069f57EXAMPLE 
+    --options ""Protocol=gre"""
+96,create-transit-gateway-connect-peer,to create a transit gateway connect peer,the following create-transit-gateway-connect-peer example creates a connect peer.,"aws ec2 create-transit-gateway-connect-peer 
+    --transit-gateway-attachment-id tgw-attach-0f0927767cEXAMPLE 
+    --peer-address 172.31.1.11 
+    --inside-cidr-blocks 169.254.6.0/29"
+97,create-transit-gateway-multicast-domain, to create an igmp multicast domain,"the following create-transit-gateway-multicast-domain example creates a multicast domain for the specified transit gateway. with static sources disabled, any instances in subnets associated with the multicast domain can send multicast traffic. if at least one member uses the igmp protocol, you must enable igmpv2 support.","aws ec2 create-transit-gateway-multicast-domain 
+    --transit-gateway-id tgw-0bf0bffefaEXAMPLE 
+    --options StaticSourcesSupport=disable,Igmpv2Support=enable"
+98,create-transit-gateway-peering-attachment,to create a transit gateway peering attachment,the following create-transit-gateway-peering-attachment example creates a peering attachment request between the two specified transit gateways.,"aws ec2 create-transit-gateway-peering-attachment 
+    --transit-gateway-id tgw-123abc05e04123abc 
+    --peer-transit-gateway-id tgw-11223344aabbcc112 
+    --peer-account-id 123456789012 
+    --peer-region us-east-2"
+99,create-transit-gateway-prefix-list-reference,to create a reference to a prefix list,the following create-transit-gateway-prefix-list-reference example creates a reference to the specified prefix list in the specified transit gateway route table.,"aws ec2 create-transit-gateway-prefix-list-reference 
+    --transit-gateway-route-table-id tgw-rtb-0123456789abcd123 
+    --prefix-list-id pl-11111122222222333 
+    --transit-gateway-attachment-id tgw-attach-aaaaaabbbbbb11111"
+100,create-transit-gateway-route,to create a transit gateway route,"the following create-transit-gateway-route example creates a route, with the specified destination, for the specified route table.","aws ec2 create-transit-gateway-route 
+    --destination-cidr-block 10.0.2.0/24 
+    --transit-gateway-route-table-id tgw-rtb-0b6f6aaa01EXAMPLE 
+    --transit-gateway-attachment-id tgw-attach-0b5968d3b6EXAMPLE"
+101,create-transit-gateway-route-table,to create a transit gateway route table,the following create-transit-gateway-route-table example creates a route table for the specified transit gateway.,"aws ec2 create-transit-gateway-route-table 
+    --transit-gateway-id tgw-0262a0e521EXAMPLE"
+102,create-transit-gateway-vpc-attachment, to associate a transit gateway with a vpc,the following create-transit-gateway-vpc-attachment example creates a transit gateway attachment to the specified vpc.,"aws ec2 create-transit-gateway-vpc-attachment 
+    --transit-gateway-id tgw-0262a0e521EXAMPLE 
+    --vpc-id vpc-07e8ffd50f49335df 
+    --subnet-id subnet-0752213d59EXAMPLE"
+103,create-volume,to create an empty general purpose ssd (gp2) volume,"the following create-volume example creates an 80 gib general purpose ssd (gp2) volume in the specified availability zone. note that the current region must be us-east-1, or you can add the --region parameter to specify the region for the command.","aws ec2 create-volume 
+    --volume-type gp2 
+    --size 80 
+    --availability-zone us-east-1a"
+104,create-vpc, to create a vpc,the following create-vpc example creates a vpc with the specified ipv4 cidr block and a name tag.,"aws ec2 create-vpc 
+    --cidr-block 10.0.0.0/16 
+    --tag-specification ResourceType=vpc,Tags=[{Key=Name,Value=MyVpc}]"
+105,create-vpc-endpoint, to create a gateway endpoint,"the following create-vpc-endpoint example creates a gateway vpc endpoint between vpc vpc-1a2b3c4d and amazon s3 in the us-east-1 region, and associates route table rtb-11aa22bb with the endpoint.","aws ec2 create-vpc-endpoint 
+    --vpc-id vpc-1a2b3c4d 
+    --service-name com.amazonaws.us-east-1.s3 
+    --route-table-ids rtb-11aa22bb"
+106,create-vpc-endpoint-connection-notification,to create an endpoint connection notification,this example creates a notification for a specific endpoint service that alerts you when interface endpoints have connected to your service and when endpoints have been accepted for your service.,aws ec2 create-vpc-endpoint-connection-notification --connection-notification-arn arn:aws:sns:us-east-2:123456789012:VpceNotification --connection-events Connect Accept --service-id vpce-svc-1237881c0d25a3abc
+107,create-vpc-endpoint-service-configuration, to create an endpoint service configuration for an interface endpoint,the following create-vpc-endpoint-service-configuration example creates a vpc endpoint service configuration using the network load balancer nlb-vpce. this example also specifies that requests to connect to the service through an interface endpoint must be accepted.,"aws ec2 create-vpc-endpoint-service-configuration 
+    --network-load-balancer-arns arn:aws:elasticloadbalancing:us-east-1:123456789012:loadbalancer/net/nlb-vpce/e94221227f1ba532 
+    --acceptance-required"
+108,create-vpc-peering-connection,to create a vpc peering connection between your vpcs,this example requests a peering connection between your vpcs vpc-1a2b3c4d and vpc-11122233.,aws ec2 create-vpc-peering-connection --vpc-id vpc-1a2b3c4d --peer-vpc-id vpc-11122233
+109,create-vpn-connection, to create a vpn connection with dynamic routing,"the following create-vpn-connection example creates a vpn connection between the specified virtual private gateway and the specified customer gateway, and applies tags to the vpn connection. the output includes the configuration information for your customer gateway device, in xml format.","aws ec2 create-vpn-connection 
+    --type ipsec.1 
+    --customer-gateway-id cgw-001122334455aabbc 
+    --vpn-gateway-id vgw-1a1a1a1a1a1a2b2b2 
+    --tag-specification 'ResourceType=vpn-connection,Tags=[{Key=Name,Value=BGP-VPN}]'"
+110,create-vpn-connection-route,to create a static route for a vpn connection,"this example creates a static route for the specified vpn connection. if the command succeeds, no output is returned.",aws ec2 create-vpn-connection-route --vpn-connection-id vpn-40f41529 --destination-cidr-block 11.12.0.0/16
+111,create-vpn-gateway,to create a virtual private gateway,this example creates a virtual private gateway.,aws ec2 create-vpn-gateway --type ipsec.1
+112,delete-carrier-gateway,to delete your carrier gateway,the following delete-carrier-gateway example deletes the specified carrier gateway.,"aws ec2 delete-carrier-gateway 
+    --carrier-gateway-id cagw-0465cdEXAMPLE1111"
+113,delete-client-vpn-endpoint,to delete a client vpn endpoint,the following delete-client-vpn-endpoint example deletes the specified client vpn endpoint.,"aws ec2 delete-client-vpn-endpoint 
+    --client-vpn-endpoint-id cvpn-endpoint-123456789123abcde"
+114,delete-client-vpn-route,to delete a route for a client vpn endpoint,the following delete-client-vpn-route example deletes the 0.0.0.0/0 route for the specified subnet of a client vpn endpoint.,"aws ec2 delete-client-vpn-route 
+    --client-vpn-endpoint-id cvpn-endpoint-123456789123abcde 
+    --destination-cidr-block 0.0.0.0/0 
+    --target-vpc-subnet-id subnet-0123456789abcabca"
+115,delete-customer-gateway,to delete a customer gateway,"this example deletes the specified customer gateway. if the command succeeds, no output is returned.",aws ec2 delete-customer-gateway --customer-gateway-id cgw-0e11f167
+116,delete-dhcp-options,to delete a dhcp options set,"this example deletes the specified dhcp options set. if the command succeeds, no output is returned.",aws ec2 delete-dhcp-options --dhcp-options-id dopt-d9070ebb
+117,delete-egress-only-internet-gateway,to delete an egress-only internet gateway,this example deletes the specified egress-only internet gateway.,aws ec2 delete-egress-only-internet-gateway --egress-only-internet-gateway-id eigw-01eadbd45ecd7943f
+118,delete-fleets,to delete an ec2 fleet,the following delete-fleets example deletes the specified ec2 fleet and terminates the associated instances.,"aws ec2 delete-fleets 
+    --fleet-ids fleet-12a34b55-67cd-8ef9-ba9b-9208dEXAMPLE 
+    --terminate-instances"
+119,delete-flow-logs,to delete a flow log,the following delete-flow-logs example deletes the specified flow log.,aws ec2 delete-flow-logs --flow-log-id fl-11223344556677889
+120,delete-fpga-image,to delete an amazon fpga image,this example deletes the specified afi.,aws ec2 delete-fpga-image --fpga-image-id afi-06b12350a123fbabc
+121,delete-instance-event-window, to delete an event window,the following delete-instance-event-window example deletes an event window.,"aws ec2 delete-instance-event-window 
+    --region us-east-1 
+    --instance-event-window-id iew-0abcdef1234567890"
+122,delete-internet-gateway,to delete an internet gateway,the following delete-internet-gateway example deletes the specified internet gateway.,"aws ec2 delete-internet-gateway 
+    --internet-gateway-id igw-0d0fb496b3EXAMPLE"
+123,delete-ipam,to delete an ipam,the following delete-ipam example deletes an ipam.,"aws ec2 delete-ipam 
+    --ipam-id ipam-036486dfa6af58ee0"
+124,delete-ipam-scope,to delete an ipam scope,the following delete-ipam-scope example deletes an ipam.,"aws ec2 delete-ipam-scope 
+    --ipam-scope-id ipam-scope-01c1ebab2b63bd7e4"
+125,delete-key-pair,to delete a key pair,"this example deletes the key pair named mykeypair. if the command succeeds, no output is returned.",aws ec2 delete-key-pair --key-name MyKeyPair
+126,delete-launch-template,to delete a launch template,this example deletes the specified launch template.,aws ec2 delete-launch-template --launch-template-id lt-0abcd290751193123
+127,delete-launch-template-versions,to delete a launch template version,this example deletes the specified launch template version.,aws ec2 delete-launch-template-versions --launch-template-id lt-0abcd290751193123 --versions 1
+128,delete-local-gateway-route,to delete a route from a local gateway route table,the following delete-local-gateway-route example deletes the specified route from the specified local gateway route table.,"aws ec2 delete-local-gateway-route 
+    --destination-cidr-block 0.0.0.0/0 
+    --local-gateway-route-table-id lgw-rtb-059615ef7dEXAMPLE"
+129,delete-managed-prefix-list,to delete a prefix list,the following delete-managed-prefix-list example deletes the specified prefix list.,"aws ec2 delete-managed-prefix-list 
+    --prefix-list-id pl-0123456abcabcabc1"
+130,delete-nat-gateway,to delete a nat gateway,this example deletes nat gateway nat-04ae55e711cec5680.,aws ec2 delete-nat-gateway --nat-gateway-id nat-04ae55e711cec5680
+131,delete-network-acl,to delete a network acl,"this example deletes the specified network acl. if the command succeeds, no output is returned.",aws ec2 delete-network-acl --network-acl-id acl-5fb85d36
+132,delete-network-acl-entry,to delete a network acl entry,"this example deletes ingress rule number 100 from the specified network acl. if the command succeeds, no output is returned.",aws ec2 delete-network-acl-entry --network-acl-id acl-5fb85d36 --ingress --rule-number 100
+133,delete-network-insights-access-scope,to delete network insights access scope,the following delete-network-insights-access-scope example deletes the selected access scope in your aws account.,"aws ec2 delete-network-insights-access-scope 
+    --region us-east-1 
+    --network-insights-access-scope-id nis-123456789111"
+134,delete-network-insights-analysis,to delete a path analysis,the following delete-network-insights-analysis example deletes the specified analysis.,"aws ec2 delete-network-insights-analysis 
+    --network-insights-analysis-id nia-02207aa13eb480c7a"
+135,delete-network-insights-path,to delete a path,"the following delete-network-insights-path example deletes the specified path. before you can delete a path, you must delete all its analyses using the delete-network-insights-analysis command.","aws ec2 delete-network-insights-path 
+    --network-insights-path-id nip-0b26f224f1d131fa8"
+136,delete-network-interface,to delete a network interface,"this example deletes the specified network interface. if the command succeeds, no output is returned.",aws ec2 delete-network-interface --network-interface-id eni-e5aa89a3
+137,delete-network-interface-permission,to delete a network interface permission,this example deletes the specified network interface permission.,aws ec2 delete-network-interface-permission --network-interface-permission-id eni-perm-06fd19020ede149ea
+138,delete-placement-group,to delete a placement group,this example command deletes the specified placement group.,aws ec2 delete-placement-group --group-name my-cluster
+139,delete-queued-reserved-instances,to delete a queued purchase,"the following delete-queued-reserved-instances example deletes the specified reserved instance, which was queued for purchase.","aws ec2 delete-queued-reserved-instances 
+    --reserved-instances-ids af9f760e-6f91-4559-85f7-4980eexample"
+140,delete-route,to delete a route,"this example deletes the specified route from the specified route table. if the command succeeds, no output is returned.",aws ec2 delete-route --route-table-id rtb-22574640 --destination-cidr-block 0.0.0.0/0
+141,delete-route-table,to delete a route table,"this example deletes the specified route table. if the command succeeds, no output is returned.",aws ec2 delete-route-table --route-table-id rtb-22574640
+142,delete-security-group,[ec2-classic] to delete a security group,"this example deletes the security group named mysecuritygroup. if the command succeeds, no output is returned.",aws ec2 delete-security-group --group-name MySecurityGroup
+143,delete-snapshot,to delete a snapshot,"this example command deletes a snapshot with the snapshot id of snap-1234567890abcdef0. if the command succeeds, no output is returned.",aws ec2 delete-snapshot --snapshot-id snap-1234567890abcdef0
+144,delete-spot-datafeed-subscription,to cancel a spot instance data feed subscription,"this example command deletes a spot data feed subscription for the account. if the command succeeds, no output is returned.",aws ec2 delete-spot-datafeed-subscription
+145,delete-subnet,to delete a subnet,"this example deletes the specified subnet. if the command succeeds, no output is returned.",aws ec2 delete-subnet --subnet-id subnet-9d4a7b6c
+146,delete-subnet-cidr-reservation,to delete a subnet cidr reservation,the following delete-subnet-cidr-reservation example deletes the specified subnet cidr reservation.,"aws ec2 delete-subnet-cidr-reservation 
+    --subnet-cidr-reservation-id scr-044f977c4eEXAMPLE"
+147,delete-tags, to delete a tag from a resource,"the following delete-tags example deletes the tag stack=test from the specified image. when you specify both a value and a key name, the tag is deleted only if the tag's value matches the specified value.","aws ec2 delete-tags 
+    --resources ami-1234567890abcdef0 
+    --tags Key=Stack,Value=Test"
+148,delete-traffic-mirror-filter,to delete a traffic mirror filter,the following delete-traffic-mirror-filter example deletes the specified traffic mirror filter.,"aws ec2 delete-traffic-mirror-filter 
+    --traffic-mirror-filter-id tmf-0be0b25fcdEXAMPLE"
+149,delete-traffic-mirror-filter-rule,to delete a traffic mirror filter rule,the following delete-traffic-mirror-filter-rule example deletes the specified traffic mirror filter rule.,"aws ec2 delete-traffic-mirror-filter-rule 
+    --traffic-mirror-filter-rule-id tmfr-081f71283bEXAMPLE"
+150,delete-traffic-mirror-session,to delete a traffic mirror session,the following delete-traffic-mirror-session example deletes the specified traffic mirror-session.,"aws ec2 delete-traffic-mirror-session 
+    --traffic-mirror-session-id tms-0af3141ce5EXAMPLE"
+151,delete-traffic-mirror-target,to delete a traffic mirror target,the following delete-traffic-mirror-target example deletes the specified traffic mirror target.,"aws ec2 delete-traffic-mirror-target 
+    --traffic-mirror-target-id tmt-060f48ce9EXAMPLE"
+152,delete-transit-gateway,to delete a transit gateway,the following delete-transit-gateway example deletes the specified transit gateway.,"aws ec2  delete-transit-gateway 
+    --transit-gateway-id tgw-01f04542b2EXAMPLE"
+153,delete-transit-gateway-connect,to delete a transit gateway connect attachment,the following delete-transit-gateway-connect example deletes the specified connect attachment.,"aws ec2 delete-transit-gateway-connect 
+    --transit-gateway-attachment-id tgw-attach-037012e5dcEXAMPLE"
+154,delete-transit-gateway-connect-peer,to delete a transit gateway connect peer,the following delete-transit-gateway-connect-peer example deletes the specified connect peer.,"aws ec2 delete-transit-gateway-connect-peer 
+    --transit-gateway-connect-peer-id tgw-connect-peer-0666adbac4EXAMPLE"
+155,delete-transit-gateway-multicast-domain,to delete a transit gateway multicast domain,the following delete-transit-gateway-multicast-domain example deletes the specified multicast domain.,"aws ec2 delete-transit-gateway-multicast-domain 
+    --transit-gateway-multicast-domain-id tgw-mcast-domain-0c4905cef7EXAMPLE"
+156,delete-transit-gateway-peering-attachment,to delete a transit gateway peering attachment,the following delete-transit-gateway-peering-attachment example deletes the specified transit gateway peering attachment.,"aws ec2 delete-transit-gateway-peering-attachment 
+    --transit-gateway-attachment-id tgw-attach-4455667788aabbccd"
+157,delete-transit-gateway-prefix-list-reference,to delete a prefix list reference,the following delete-transit-gateway-prefix-list-reference example deletes the specified prefix list reference.,"aws ec2 delete-transit-gateway-prefix-list-reference 
+    --transit-gateway-route-table-id tgw-rtb-0123456789abcd123 
+    --prefix-list-id pl-11111122222222333"
+158,delete-transit-gateway-route,to delete a cidr block from a route table,the following delete-transit-gateway-route example deletes the cidr block from the specified transit gateway route table.,"aws ec2 delete-transit-gateway-route 
+    --transit-gateway-route-table-id tgw-rtb-0b6f6aaa01EXAMPLE 
+    --destination-cidr-block 10.0.2.0/24"
+159,delete-transit-gateway-route-table,to delete a transit gateway route table,the following delete-transit-gateway-route-table example deletes the specified transit gateway route table.,"aws ec2  delete-transit-gateway-route-table 
+    --transit-gateway-route-table-id tgw-rtb-0b6f6aaa01EXAMPLE"
+160,delete-transit-gateway-vpc-attachment,to delete a transit gateway vpc attachment,the following delete-transit-gateway-vpc-attachment example deletes the specified vpc attachment.,"aws ec2 delete-transit-gateway-vpc-attachment 
+    --transit-gateway-attachment-id tgw-attach-0d2c54bdbEXAMPLE"
+161,delete-volume,to delete a volume,"this example command deletes an available volume with the volume id of vol-049df61146c4d7901. if the command succeeds, no output is returned.",aws ec2 delete-volume --volume-id vol-049df61146c4d7901
+162,delete-vpc,to delete a vpc,"this example deletes the specified vpc. if the command succeeds, no output is returned.",aws ec2 delete-vpc --vpc-id vpc-a01106c2
+163,delete-vpc-endpoint-connection-notifications,to delete an endpoint connection notification,this example deletes the specified endpoint connection notification.,aws ec2 delete-vpc-endpoint-connection-notifications --connection-notification-ids vpce-nfn-008776de7e03f5abc
+164,delete-vpc-endpoint-service-configurations,to delete an endpoint service configuration,this example deletes the specified endpoint service configuration.,aws ec2 delete-vpc-endpoint-service-configurations --service-ids vpce-svc-03d5ebb7d9579a2b3
+165,delete-vpc-endpoints,to delete an endpoint,"this example deletes endpoints vpce-aa22bb33 and vpce-1a2b3c4d. if the command is partially successful or unsuccessful, a list of unsuccessful items is returned. if the command succeeds, the returned list is empty.",aws ec2 delete-vpc-endpoints --vpc-endpoint-ids vpce-aa22bb33 vpce-1a2b3c4d
+166,delete-vpc-peering-connection,to delete a vpc peering connection,this example deletes the specified vpc peering connection.,aws ec2 delete-vpc-peering-connection --vpc-peering-connection-id pcx-1a2b3c4d
+167,delete-vpn-connection,to delete a vpn connection,"this example deletes the specified vpn connection. if the command succeeds, no output is returned.",aws ec2 delete-vpn-connection --vpn-connection-id vpn-40f41529
+168,delete-vpn-connection-route,to delete a static route from a vpn connection,"this example deletes the specified static route from the specified vpn connection. if the command succeeds, no output is returned.",aws ec2 delete-vpn-connection-route --vpn-connection-id vpn-40f41529 --destination-cidr-block 11.12.0.0/16
+169,delete-vpn-gateway,to delete a virtual private gateway,"this example deletes the specified virtual private gateway. if the command succeeds, no output is returned.",aws ec2 delete-vpn-gateway --vpn-gateway-id vgw-9a4cacf3
+170,deprovision-byoip-cidr,to remove an ip address range from use,the following example removes the specified address range from use with aws.,"aws ec2 deprovision-byoip-cidr 
+    --cidr 203.0.113.25/24"
+171,deprovision-ipam-pool-cidr,to deprovision an ipam pool cidr,the following deprovision-ipam-pool-cidr example deprovisions a cidr provisioned to an ipam pool.,"aws ec2 deprovision-ipam-pool-cidr 
+    --ipam-pool-id ipam-pool-02ec043a19bbe5d08 
+    --cidr 11.0.0.0/16"
+172,deregister-image,to deregister an ami,"this example deregisters the specified ami. if the command succeeds, no output is returned.",aws ec2 deregister-image --image-id ami-4fa54026
+173,deregister-instance-event-notification-attributes, to remove all tags from event notifications,"the following deregister-instance-event-notification-attributes example removes includealltagsofinstance=true, which has the effect of setting includealltagsofinstance to false.","aws ec2 deregister-instance-event-notification-attributes 
+    --instance-tag-attribute IncludeAllTagsOfInstance=true"
+174,deregister-transit-gateway-multicast-group-members,to deregister group members from a multicast group,this example deregisters the specified network interface group member from the transit gateway multicast group.,"aws ec2 deregister-transit-gateway-multicast-group-members 
+    --transit-gateway-multicast-domain-id tgw-mcast-domain-0c4905cef7EXAMPLE 
+    --group-ip-address 224.0.1.0 
+    --network-interface-ids eni-0e246d3269EXAMPLE"
+175,describe-account-attributes,to describe all the attributes for your aws account,this example describes the attributes for your aws account.,aws ec2 describe-account-attributes
+176,describe-addresses, to retrieve details about all of your elastic ip addresses,the following describe addresses example displays details about your elastic ip addresses.,aws ec2 describe-addresses
+177,describe-addresses-attribute,to view the attributes of the domain name associated with an elastic ip address,the following describe-addresses-attribute examples return the attributes of the domain name associated with the elastic ip address.,"aws ec2 describe-addresses-attribute 
+    --allocation-ids eipalloc-abcdef01234567890 
+    --attribute domain-name"
+178,describe-aggregate-id-format,to describe the longer id format settings for all resource types in a region,the following describe-aggregate-id-format example describes the overall long id format status for the current region. the deadline value indicates that the deadlines for these resources to permanently switch from the short id format to the long id format expired. the uselongidsaggregated value indicates that all iam users and iam roles are configured to use long id format for all resource types.,aws ec2 describe-aggregate-id-format
+179,describe-availability-zones,to describe your availability zones,"the following example describe-availability-zones displays details for the availability zones that are available to you. the response includes availability zones only for the current region. in this example, it uses the profiles default us-west-2 (oregon) region.",aws ec2 describe-availability-zones
+180,describe-bundle-tasks,to describe your bundle tasks,this example describes all of your bundle tasks.,aws ec2 describe-bundle-tasks
+181,describe-byoip-cidrs,to describe your provisioned address ranges,the following describe-byoip-cidrs example displays details about the public ipv4 address ranges that you provisioned for use by aws.,aws ec2 describe-byoip-cidrs
+182,describe-capacity-reservation-fleets,to view a capacity reservation fleet,the following describe-capacity-reservation-fleets example lists configuration and capacity information for the specified capacity reservation fleet. it also lists details about the individual capacity reservations that are inside the fleet.:,"aws ec2 describe-capacity-reservation-fleets 
+    --capacity-reservation-fleet-ids crf-abcdef01234567890"
+183,describe-capacity-reservations, to describe one or more of your capacity reservations,the following describe-capacity-reservations example displays details about all of your capacity reservations in the current aws region.,aws ec2 describe-capacity-reservations
+184,describe-carrier-gateways,to describe all carrier gateways,the following describe-carrier-gateways example lists all your carrier gateways.,aws ec2 describe-carrier-gateways
+185,describe-classic-link-instances,to describe linked ec2-classic instances,this example lists all of your linked ec2-classic instances.,aws ec2 describe-classic-link-instances
+186,describe-client-vpn-authorization-rules,to describe the authorization rules for a client vpn endpoint,the following describe-client-vpn-authorization-rules example displays details about the authorization rules for the specified client vpn endpoint.,"aws ec2 describe-client-vpn-authorization-rules 
+    --client-vpn-endpoint-id cvpn-endpoint-123456789123abcde"
+187,describe-client-vpn-connections,to describe the connections to a client vpn endpoint,the following describe-client-vpn-connections example displays details about the client connections to the specified client vpn endpoint.,"aws ec2 describe-client-vpn-connections 
+    --client-vpn-endpoint-id cvpn-endpoint-123456789123abcde"
+188,describe-client-vpn-endpoints,to describe your client vpn endpoints,the following describe-client-vpn-endpoints example displays details about all of your client vpn endpoints.,aws ec2 describe-client-vpn-endpoints
